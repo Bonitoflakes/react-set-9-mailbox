@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import { Inbox } from "./pages/Inbox";
 import { Sent } from "./pages/Sent";
 import { Email } from "./pages/Email";
+import { MailContextProvider } from "./contexts/MailContext";
 
 export const CustomRoutes = () => {
   return (
@@ -25,8 +26,10 @@ export const CustomRoutes = () => {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
-      <CustomRoutes />
+      <MailContextProvider>
+        <App />
+        <CustomRoutes />
+      </MailContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

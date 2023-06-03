@@ -1,5 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 export const Email = () => {
-  return <div>Email</div>;
+  const { emailID } = useParams();
+  return <div>Email {emailID}</div>;
 };
